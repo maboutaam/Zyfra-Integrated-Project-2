@@ -175,20 +175,9 @@ c = train_data['rougher.output.concentrate_au']
 f = train_data['rougher.input.feed_au']
 t = train_data['rougher.output.tail_au']
 
-
-# <div class="alert alert-success">
-# <b>Reviewer's comment</b>
-# 
-# Good job! 
-#     
-# Tip: The best way to fill NaNs when you have ordered data is to use previous value to fill current value. It can be easily done with: fillna(method='ffill')
-# 
-# </div>
-
 # ### The reason these columns were selected is because they are needed to compute the rougher stage recovery of gold, which is an important KPI in the recovery process. 
 
 # In[16]:
-
 
 # Calculate recovery
 recovery = c * (f - t) / (f * (c - t))
@@ -480,14 +469,6 @@ else:
     print("\nThere is no significant difference between the distributions.")
     print("The model evaluation should be reliable.")
 
-
-# <div class="alert alert-success">
-# <b>Reviewer's comment</b>
-# 
-# Yeah, stat. test shows that the distributions are not the same. But for ML model it's okay. They have to be just similar and that's enough.
-# 
-# </div>
-
 # In[35]:
 
 
@@ -581,20 +562,6 @@ for stage in stages:
 
 
 # This proves that the total concentration is not zero at any of these stages.
-
-# <div class="alert alert-danger">
-# <b>Reviewer's comment</b>
-# 
-# Everything is correct here. But the goal of this task was to clean the data based on these graphs. Do you think it could be that the total concentration at any of these stages is zero? If not, then you need to remove such data from the dataset.
-#     
-# </div>
-
-# <div class="alert alert-warning">
-# <b>Reviewer's comment V2</b>
-# 
-# Okay, good job! But actually you should plot the graphs before to clean the data because before plotting the graphs you don't know about the problem in data:)
-#     
-# </div>
 
 # In[42]:
 
@@ -810,31 +777,6 @@ if test_final_smape < constant_final_smape:
 else:
     print(f"Constant model outperforms the best model by {test_final_smape - constant_final_smape:.4f} SMAPE points.")
 
-
-# <div class="alert alert-warning">
-# <b>Reviewer's comment</b>
-# 
-# Why do you have 2 the same smape functions?
-#     
-# </div>
-
-# <div class="alert alert-danger">
-# <b>Reviewer's comment</b>
-# 
-# Everything is correct but:
-#     
-# 1. You need to tune hyperparameters at least for one model
-# 2. You need to measure weighted smape on the test data. To do it, you need to take corresponding targets from the full data. You can use column with dates to find corresponding rows.
-# 3. You need to compare your best model with the constant model. The best constant here is median. And don't forget that you can calculate median only on train data. Your ML model should be better the constant model at least a bit.
-#     
-# </div>
-
-# <div class="alert alert-success">
-# <b>Reviewer's comment V2</b>
-# 
-# Good job! Everything looks correct now.
-#     
-# </div>
 
 # # Conclusion
 # 
