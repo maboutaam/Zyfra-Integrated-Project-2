@@ -218,19 +218,6 @@ mae = mean_absolute_error(valid_provided, valid_calculated)
 
 print(f"\nMean Absolute Error: {mae}")
 
-
-# <div class="alert alert-danger">
-# <b>Reviewer's comment</b>
-# 
-# Something is wrong here. You should get almost zero MAE. Probably you got wrong result because of NaNs. This task should be done before filling NaNS. Or the problem is somewhere else. So, please, fix it
-# </div>
-
-# <div class="alert alert-success">
-# <b>Reviewer's comment V2</b>
-# 
-# The result is correct now. Good job!
-# </div>
-
 # In[19]:
 
 
@@ -363,22 +350,6 @@ plt.show()
 # The boxplots are used in the picture to explain the distribution of metal concentrations (AU, AG, and PB) during the various purification stages (rougher, primary cleaner, and final). The concentration of gold (AU) rises significantly from approximately 8 in the rougher stage to approximately 30 in the final stage. 
 # The concentration of silver (AG) rises to around 10 in the primary cleaner stage from about 8 in the rougher stage, but falls to about 6 in the final step. 
 # In the rougher stage, lead (PB) concentration is approximately 5, but it increases to 10 in the primary cleaning stage and stays constant in the final stage. These results show that the purification procedure successfully raises the concentration of AU, has a minimal impact on AG, and stabilizes the concentration of PB at the final stage.
-
-# <div class="alert alert-danger">
-# <b>Reviewer's comment</b>
-# 
-# 1. The code fell
-# 2. Actually this is not the best suitable graph type. When you need to compare distibutions, you can use only histograms or boxplots.
-# 3. It's better to plot 3 graphs here. One for each metal. And on each graph you should plot 4 histograms with different colors or 4 boxplots with the proper order.
-# 
-#     
-# </div>
-
-# <div class="alert alert-success">
-# <b>Reviewer's comment V2</b>
-# 
-# Well done!
-# </div>
 
 # In[29]:
 
